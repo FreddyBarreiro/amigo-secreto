@@ -7,7 +7,6 @@ let txtAmigo = document.getElementById("amigo"); // Tomamos el amigo del campo t
 
 function agregarAmigo(nombreAmigo) {
 
-
     nombreAmigo = txtAmigo.value
 
     if (nombreAmigo === "") {
@@ -19,10 +18,7 @@ function agregarAmigo(nombreAmigo) {
         arrayAmigos.push(nombreAmigo);
         listaAmigos.innerHTML += `<li>${nombreAmigo}</li>`;
 
-
-        alert(`Agregado ${nombreAmigo} ahora el array contiene ${arrayAmigos} `);
-
-
+        //alert(`Agregado ${nombreAmigo} ahora el array contiene ${arrayAmigos} `);
 
         txtAmigo.value = ""; // Borro el contenido del txt
         document.getElementById("amigo").focus();
@@ -35,13 +31,27 @@ function sortearAmigo() {
 
     maxNum = arrayAmigos.length;
 
+    if (arrayAmigos == "") {
 
-    let elegido = Math.floor(Math.random() * arrayAmigos.length); //Math.floor(Math.random(maxNum)*10  +1);
-    alert(`El numero maximo es ${maxNum} y el random es ${elegido} y el nombre es ${arrayAmigos[elegido]} `);
+        alert("Debes ingresar primero los nombres de tus amigos");
+
+    } else {
+
+        let elegido = Math.floor(Math.random() * arrayAmigos.length); //Math.floor(Math.random(maxNum)*10  +1);
+        resultado.innerHTML = `El amigo elegido es: ${arrayAmigos[elegido]}`;
+        //alert(`El numero maximo es ${maxNum} y el random es ${elegido} y el nombre es ${arrayAmigos[elegido]} `);
+        listaAmigos.innerHTML = "";
 
 
 
-    
+    }
+
+
+
+
+
+
+
 }
 
 
